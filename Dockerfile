@@ -1,7 +1,7 @@
-FROM java:openjdk-8u111-alpine
+FROM anapsix/alpine-java
 RUN apk add --update &&  apk add git && \
-    git clone https://github.com/KOHGYLW/kiftd.git && mkdir data
+    git clone https://github.com/KOHGYLW/kiftd.git /kiftd && mkdir /data
     
 EXPOSE 9000
-VOLUME ["./kiftd/conf","./data"]
+VOLUME ["/kiftd/conf","/data"]
 CMD ["java -jar kiftd-1.0.6-RELEASE.jar -start"]
