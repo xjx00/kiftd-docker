@@ -4,4 +4,4 @@ RUN apk add --update &&  apk add git && \
     
 EXPOSE 9000
 VOLUME ["/kiftd/conf","/data"]
-CMD ["java","-jar","kiftd-1.0.6-RELEASE.jar","-start"]
+CMD ["java","-jar","/kiftd/kiftd-1.0.6-RELEASE.jar","-start"]
